@@ -1,0 +1,25 @@
+h3 {
+  margin: 4px 0px 4px 0px;
+}
+
+input {
+  margin: 6px 0px 6px 0px;
+}
+
+table {
+  margin: auto;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #a5a5a5;
+  text-align: left;
+  padding: 4px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

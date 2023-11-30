@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My Music</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1>ECE 9065 Lab 3</h1>
+  <div id="requestPanel">
+    <div>
+      <h3>Genres</h3>
+      <button type="button" onclick="getGenres()">Get All Genres</button>
+    </div>
+    <div>
+      <h3>Artists</h3>
+      <input type="text" placeholder="Type artist ID..." id="artistId">
+      <button type="button" onclick="getArtist()">Get Artist</button>&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" placeholder="Type artist name..." id="artistName">
+      <button type="button" onclick="searchArtists()">Search Artists</button>
+    </div>
+
+    <div>
+      <h3>Tracks</h3>
+      <input type="text" placeholder="Type track ID..." id="trackId">
+      <button type="button" onclick="getTrack()">Get Track</button>&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" placeholder="Type track/album title..." id="trackAlbumTitle">
+      <input type="text" placeholder="Type number of tracks..." id="trackNum">
+      <button type="button" onclick="searchTracks()">Search Tracks</button>
+    </div>
+    <div>
+      <select id="searchTrackBy">
+        <option value="none" selected>Not Selected search by</option>
+        <option value="artist_name">Artist Name</option>
+        <option value="album_title">Album Title</option>
+        <option value="track_title">Track Title</option>
+      </select>
+      <input type="text" placeholder="Type search content..." id="searchTrackData">
+      <select id="orderBySelectTrack" onchange="onChangeOrderByTrack()">
+        <option value="none" selected>Not Selected Order by</option>
+        <option value="artist_name">Artist Name</option>
+        <option value="album_title">Album Title</option>
+        <option value="track_title">Track Title</option>
+        <option value="track_duration">Track Duration</option>
+      </select>
+      <label>
+        <input type="radio" id="radioAscTrack" name="isDescTrack" value="false" disabled checked>ASC
+        <input type="radio" id="radioDescTrack" name="isDescTrack" value="true" disabled>DESC
+      </label>
+      <button type="button" onclick="searchTracksData()">Search Tracks data</button>
+    </div>
+
+    <div>
+      <h3>Favourite Lists</h3>
+      <input type="text" placeholder="Type name of favourite list..." id="favNameCreate">
+      <input type="text" placeholder="Type track IDs..." id="favTrackids">
+      <button type="button" onclick="createFavourite()">Create Favourite List</button>
+      <button type="button" onclick="updateFavourite()">Update Favourite List</button>
+    </div>
+    <div>
+      <button type="button" onclick="getAllFavourites()">Get All Favourite Lists</button>&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" placeholder="Type name of favourite list..." id="favNameGet">
+      <button type="button" onclick="getFavourite()">Get Favourite List</button>
+      <button type="button" onclick="deleteFavourite()">Delete Favourite List</button>
+    </div>
+
+    <div>
+      <input type="text" placeholder="Type name of favourite list..." id="favNameGetDetail">
+      <select id="orderBySelect" onchange="onChangeOrderBy()">
+        <option value="none" selected>Not Selected Order by</option>
+        <option value="artist_name">Artist Name</option>
+        <option value="album_title">Album Title</option>
+        <option value="track_title">Track Title</option>
+        <option value="track_duration">Track Duration</option>
+      </select>
+      <label>
+        <input type="radio" id="radioAsc" name="isDesc" value="false" disabled checked>ASC
+        <input type="radio" id="radioDesc" name="isDesc" value="true" disabled>DESC
+      </label>
+      <button type="button" onclick="getFavouriteDetail()">Get Favourite List Detail</button>
+    </div>
+  </div>
+
+  <div id="tableContent">
+  </div>
+
+  <script src="utils.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
